@@ -1,0 +1,32 @@
+{
+    "name": "SMWS Decoder",
+    "description": "Automatically decodes the SMWS Distillery Codes",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [{
+        "matches": ["https://*.smws.com/*"],
+        "js": ["smws-decoder.js"]
+    }],
+    "permissions": [
+        "storage"
+    ],
+    "action": {
+        "default_popup": "smws-popup.html",
+        "default_icon": {
+            "16": "/images/get_started16.png",
+            "32": "/images/get_started32.png",
+            "48": "/images/get_started48.png",
+            "128": "/images/get_started128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/get_started16.png",
+        "32": "/images/get_started32.png",
+        "48": "/images/get_started48.png",
+        "128": "/images/get_started128.png"
+    },
+    "web_accessible_resources": [{
+        "resources": ["smws-codes.json"],
+        "matches": ["https://*.smws.com/*"]
+    }]
+}
